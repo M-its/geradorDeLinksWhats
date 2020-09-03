@@ -1,5 +1,5 @@
 <template>
-  <div class="row">
+  <div class="everything">
     <Gerador />
   </div>
 </template>
@@ -15,3 +15,8 @@ export default {
   }
 };
 </script>
+<style scoped>
+.everything {
+  max-width: 100vw;
+}
+</style>

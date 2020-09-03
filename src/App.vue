@@ -1,9 +1,12 @@
 <template>
-  <div id="app" class="container">
+  <div id="app">
     <router-view />
   </div>
 </template>
 
 <style lang="scss">
 @import "../node_modules/bootstrap/scss/bootstrap";
+#app {
+  height: 100vh;
+}
 </style>
