@@ -2,14 +2,14 @@
   <div class="col-12 all-content">
     <header class="col-12 d-flex">
       <!-- logo -->
-      <div class="col-8 logo p-4">
+      <div class="col-12 pt-4 mt-2 align-items-center logo">
         <a href="/">
           <img
             class="col-4"
             src="../../public/img/whatsapp-logo.png"
             alt="Logo Whatsapp"
           />
-          <span class="col-8 logo">WhatsApp Link</span>
+          <span class="col-8">WhatsApp Link</span>
         </a>
       </div>
     </header>
@@ -90,7 +90,7 @@ export default {
     Geralink: function() {
       let n = this.numero.replace(/[^0-9]/g, "");
       let m = encodeURI(this.mensagem);
-      this.url = `https://wa.me/send?phone=${n}&text=${m}`;
+      this.url = `https://api.whatsapp.com/send?phone=${n}&text=${m}`;
       this.$router.push({
         name: "Resultado",
         params: {
@@ -128,7 +128,7 @@ header {
   padding-right: -15px;
   padding-left: -15px;
 }
-span.logo {
+.logo span {
   color: white;
   font-size: 3em;
   line-height: 1.6em;
@@ -189,17 +189,46 @@ span.strong-text {
   margin-top: 150px;
 }
 
+/* extra small devices (landscape phones, 576px and up) */
+@media (min-width: 200px) and (max-width: 479.98px) {
+  .logo {
+    margin-left: 40px;
+  }
+  img {
+    width: 40px;
+    margin-top: 20px;
+    padding-right: 0px;
+  }
+  .logo span {
+    color: white;
+    font-size: 1.3em;
+    line-height: 1em;
+  }
+  .list {
+    margin: 20px 20px 20px 0px;
+    font-size: 1em;
+  }
+  .mesage {
+    margin-top: 50px;
+    text-align: center;
+  }
+  .description {
+    margin-top: 70px;
+    margin-bottom: 50px;
+  }
+}
+
 /* small devices (landscape phones, 576px and up) */
 @media (min-width: 480px) and (max-width: 767.98px) {
   img {
-    width: 15%;
-    margin-top: 20px;
+    margin-top: 10px;
+    width: 60px;
     padding-bottom: 35px;
     padding-right: 0px;
   }
-  span.logo {
+  .logo span {
     color: white;
-    font-size: 160%;
+    font-size: 2.5em;
     line-height: 0.6em;
   }
   .list {
